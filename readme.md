@@ -109,10 +109,14 @@ Ejecuta el método main para verificar que:
 
 #### Preguntas de Análisis:
 - ¿Cómo mejora la legibilidad del código cliente el uso del patrón Builder?
+El patrón Builder mejora la legibilidad porque cada parámetro opcional queda etiquetado con su nombre (age(30), phone(...)), evitando depender del orden posicional del constructor. El código cliente se lee como una frase natural y solo se especifican los valores necesarios. Además, elimina el riesgo de confundir parámetros del mismo tipo, como ocurre con los constructores telescópicos.
 
 - ¿Qué ventaja tiene hacer la clase `Builder` estática e interna?
 
+Al ser estática, no requiere una instancia de User para instanciarse, evitando dependencias innecesarias. Al ser interna, permite que el constructor de User sea privado, forzando a que toda creación pase por el Builder y manteniendo la cohesión del código. También evita contaminar el espacio de nombres global del paquete.
+
 - ¿Garantiza este patrón la inmutabilidad del objeto `User`? ¿Por qué?
 
+Sí, siempre que los campos sean final, no existan setters y el constructor sea privado. El Builder es mutable por diseño (sus campos no son final), pero el User resultante de build() es una copia independiente e inmutable: aunque se modifique el Builder después, el User ya construido no cambia.
 
 ---
