@@ -109,7 +109,10 @@ Ejecuta el método main para verificar que:
 
 #### Preguntas de Análisis:
 - ¿Cómo mejora la legibilidad del código cliente el uso del patrón Builder?
+
 - ¿Qué ventaja tiene hacer la clase `Builder` estática e interna?
+
 - ¿Garantiza este patrón la inmutabilidad del objeto `User`? ¿Por qué?
+
 
 ---
